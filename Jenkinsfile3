@@ -52,9 +52,13 @@
         node {
 
                stage 'Stage 1'
+               node {
                      echo 'Hello World 1'
+                     }
                stage 'Stage 2'
+               node {
                      echo 'Hello World 2'
+                     }
 
                }
 
