@@ -17,7 +17,7 @@ branches["Branch 2"] = {
 
 
 branches["Branch 2"] = {  
-     {
+     
 
 
    def mvnHome
@@ -82,5 +82,5 @@ branches["Branch 2"] = {
                      }
 
                }
-}
+
 }
