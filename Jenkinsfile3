@@ -1,0 +1,52 @@
+
+   def mvnHome
+   def mvnHome1
+
+     stage 'Preparation'
+     parallel (
+        "pre 1" : { 
+               node {
+              git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+              mvnHome = tool 'M3'
+               }
+           },
+            "pre 2" :
+           {
+              node {
+              git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+              mvnHome1 = tool 'M3'
+               }
+           }
+        )
+   
+   stage 'Build'
+     parallel (
+        "build 1" : { 
+               node {
+              // Run the maven build
+              if (isUnix()) {
+                 sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+              } else {
+                 bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+               }
+               junit '**/target/surefire-reports/TEST-*.xml'
+               archive 'target/*.jar'
+              }
+           },
+           "build 2" :
+           {
+               node {
+              // Run the maven build
+              if (isUnix()) {
+                 sh "'${mvnHome1}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+              } else {
+                 bat(/"${mvnHome1}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+               }
+               junit '**/target/surefire-reports/TEST-*.xml'
+             archive 'target/*.jar'
+              }
+           }
+        )
+   
+
+   
