@@ -1,15 +1,17 @@
 parallel (
     "stream 1" : { 
                      node { 
-                           "echo 'new Date()'"       
-                           sh "sleep 20s" 
+                           sh "date"                                                       
+                           sh "sleep 60s" 
                            sh "echo hstream1"
+                           sh "date"                                                       
                        } 
                    },
     "stream 2" : { 
                      node { 
-                           "echo 'new Date()'"       
+                           sh "date"                                                       
                            sh "echo hello2"
+                           sh "sleep 30s" 
                            sh "date"                                                       
                        } 
                    }
