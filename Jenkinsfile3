@@ -47,6 +47,12 @@
               }
            }
         )
+        stage 'InteTest'
+        node {
+               echo 'test'
+               git([url: 'https://negupta@stash.mashery.com/stash/scm/eng/mashery-data.git', branch: 'NDS-2870'])
+               }
+
    
 
    
