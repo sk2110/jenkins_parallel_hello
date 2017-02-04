@@ -10,7 +10,7 @@ parallel (
                      node { 
                           
                            sh "echo hello2"
-                           sh "hashtag fail"                                                       
+                           sh "date"                                                       
                        } 
                    }
           )
