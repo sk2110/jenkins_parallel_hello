@@ -1,4 +1,25 @@
 
+def branches = [:]  
+branches["Branch 1"] = {  
+    node() {
+        echo 'Hello Branch 1'
+         // do something with the project files
+    }
+}
+
+branches["Branch 2"] = {  
+    node() {
+        echo 'Hello Branch 1'
+        // do something else with the project files
+    }
+}
+
+
+
+branches["Branch 2"] = {  
+    node() {
+
+
    def mvnHome
    def mvnHome1
    def mvnHome2
@@ -61,7 +82,6 @@
                      }
 
                }
-
-   
-
-   
+}
+}
+parallel branches
