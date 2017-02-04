@@ -52,7 +52,7 @@
         node {
                echo 'test'
                git 'https://github.com/sk2110/jenkins_parallel_hello.git'
-               git branch:'master'
+               git script:'Jenkinsfile'
                mvnHome2 = tool 'M3'
 
                }
