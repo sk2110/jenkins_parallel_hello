@@ -1,6 +1,7 @@
 
    def mvnHome
    def mvnHome1
+   def mvnHome2
 
      stage 'Preparation'
      parallel (
@@ -50,7 +51,9 @@
         stage 'InteTest'
         node {
                echo 'test'
-               git([url: 'https://negupta@stash.mashery.com/stash/scm/eng/mashery-data.git', branch: 'NDS-2870'])
+               git([url: 'https://github.com/sk2110/jenkins_parallel_hello', branch: 'master', script: 'Jenkinsfile'])
+               mvnHome2 = tool 'M3'
+
                }
 
    
