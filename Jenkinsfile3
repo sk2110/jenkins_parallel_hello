@@ -85,5 +85,5 @@ branches["Branch 2"] = {
                }
 
 }
-branches
+parallel branches
 }
