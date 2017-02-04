@@ -51,7 +51,7 @@
         stage 'InteTest'
         node {
                echo 'test'
-               git([url: 'https://github.com/sk2110/jenkins_parallel_hello', branch: 'master', script: 'Jenkinsfile'])
+               git 'https://github.com/sk2110/jenkins_parallel_hello.git'
                mvnHome2 = tool 'M3'
 
                }
