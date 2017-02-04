@@ -1,4 +1,4 @@
- node {
+
      stage 'Stage 1'
      parallel (
         "stream 1" : { 
@@ -38,4 +38,4 @@
                            } 
                        }
           )
- }
+ 
