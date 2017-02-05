@@ -65,7 +65,7 @@ def mvnHome
                  
                      jenkinsStream = 'http://localhost:8080/job/testpipeline/lastBuild/api/json'
                      buildStatusJson = json.load( jenkinsStream )
-                     if (buildStatusJson["result"] == "SUCCESS") :
+                     if (buildStatusJson["result"] == "SUCCESS")
                         node
                         {
                            build job : 'testpipeline2'
