@@ -58,10 +58,10 @@ def mvnHome
                node {
                      echo 'Hello World 2'
                      }
-                stage 'Starting ART job'
-                node {
+                stage 'Starting NextData'
+                
                      build job: 'NextData'
-                     }
+                   
 
 
                }
