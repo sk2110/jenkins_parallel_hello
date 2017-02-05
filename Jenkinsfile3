@@ -1,27 +1,4 @@
-node
-{
-def branches = [:]  
-branches["Branch 1"] = {  
-    node{
-        echo 'Hello Branch 1'
-         // do something with the project files
-    }
-}
-
-branches["Branch 2"] = {  
-    node{ 
-        echo 'Hello Branch 1'
-        // do something else with the project files
-    }
-}
-
-
-
-branches["Branch 2"] = {  
-     
-
-
-   def mvnHome
+def mvnHome
    def mvnHome1
    def mvnHome2
 
@@ -81,9 +58,13 @@ branches["Branch 2"] = {
                node {
                      echo 'Hello World 2'
                      }
+                stage 'Starting ART job'
+                node {
+                     build job: 'NextData'
+                     }
+
 
                }
 
-}
-parallel branches
-}
+
+
