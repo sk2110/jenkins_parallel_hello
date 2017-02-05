@@ -1,7 +1,5 @@
-import json 
-import sys
-import urllib
-import urllib2
+import groovy.json 
+
    
    def mvnHome
    def mvnHome1
