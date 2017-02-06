@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
-import groovy.json
 import hudson.model.*
 import hudson.EnvVars
+import groovy.json
 import groovy.json.JsonSlurperClassic
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
