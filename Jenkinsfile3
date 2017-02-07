@@ -78,7 +78,7 @@ import groovy.json.JsonSlurper
                      buildStatusJson = json.load( jenkinsStream )
                         node
                         {
-                           build job : 'testpipeline2'
+                           build job : 'NextData'
                         }
 
                    
