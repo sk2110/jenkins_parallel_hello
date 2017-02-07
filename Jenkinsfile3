@@ -71,14 +71,16 @@ import groovy.json.JsonSlurper
                      }
                 stage 'Starting NextData'
                 
-                    node{ build job: 'testpipeline'}
+                //    node{
+                       build job: 'NextData'
+                 //   }
                  stage 'testpipeline2'
                  
                   //   jenkinsStream = 'http://localhost:8080/job/testpipeline/lastBuild/api/json'
                   //   buildStatusJson = json.load( jenkinsStream )
                         node
                         {
-                           build job : 'NextData'
+                           build job : 'testpipeline'
                         }
 
                    
