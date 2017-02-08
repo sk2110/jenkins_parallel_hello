@@ -70,10 +70,26 @@ import groovy.json.JsonSlurper
                      echo 'Hello World 2'
                      }
                 stage 'Starting NextData'
+           parallel(
+               "NexData_temp 1" : { 
+             
+              
                 
                 //    node{
                        build job: 'NexData_temp'
                  //   }
+               }
+              
+               "NexData_temp 2" : { 
+             
+              
+                
+                //    node{
+                       build job: 'NexData_temp'
+                 //   }
+               }
+              )
+              
                  stage 'testpipeline2'
                  
                   //   jenkinsStream = 'http://localhost:8080/job/testpipeline/lastBuild/api/json'
