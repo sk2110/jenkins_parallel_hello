@@ -72,7 +72,7 @@ import groovy.json.JsonSlurper
                 stage 'Starting NextData'
                 
                 //    node{
-                       build job: 'NextData'
+                       build job: 'NextData_temp'
                  //   }
                  stage 'testpipeline2'
                  
