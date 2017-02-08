@@ -12,6 +12,7 @@ import groovy.json.JsonSlurper
    def mvnHome
    def mvnHome1
    def mvnHome2
+   def a=1
 
      stage 'Preparation'
      parallel (
@@ -69,6 +70,7 @@ import groovy.json.JsonSlurper
                node {
                      echo 'Hello World 2'
                      }
+           
                 stage 'Starting NextDataP'
            parallel(
                "NexData_temp 1" : { 
