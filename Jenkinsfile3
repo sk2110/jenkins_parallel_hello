@@ -69,7 +69,7 @@ import groovy.json.JsonSlurper
                node {
                      echo 'Hello World 2'
                      }
-                stage 'Starting NextData'
+                stage 'Starting NextDataP'
            parallel(
                "NexData_temp 1" : { 
              
