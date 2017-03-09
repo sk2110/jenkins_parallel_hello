@@ -80,7 +80,7 @@ import groovy.json.JsonSlurper
         dontWaitForConcurrentBuildCompletion: false])
         
 
-      stage 'echos'
+   /*   stage 'echos'
          node {
             echo env.JOB_BASE_NAME
             echo env.BUILD_NUMBER 
@@ -88,5 +88,5 @@ import groovy.json.JsonSlurper
            // echo env.s3-profile
             
          }
-         
+         */
 
