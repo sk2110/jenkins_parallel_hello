@@ -59,7 +59,7 @@ import groovy.json.JsonSlurper
               }
            }
         )
-        stage 'NextDataP'
+      /*  stage 'NextDataP'
         node { 
                build job: 'NextData'
               }
@@ -74,8 +74,13 @@ import groovy.json.JsonSlurper
                  $class: 'Entry',
                  bucket: "jenkins-poc/${env.JOB_BASE_NAME}",
                  sourceFile: "${env.JOB_BASE_NAME}.tar.gz",
-                 selectedRegion: "us-east-1"
+                // selectedRegion: "us-east-1"
                ]]])
-        }
+        }*/
+
+      stage 'echos'
+         node {
+            echo env.JOB_BASE_NAME
+         }
          
 
