@@ -59,43 +59,23 @@ import groovy.json.JsonSlurper
               }
            }
         )
-        stage 'InteTest'
+        stage 'NextDataP'
+        node { 
+               build job: 'NexData_temp'
+              }
+
+        stage "Upload artifact"
         node {
-
-               stage 'Stage 1'
-               node {
-                     echo 'Hello World 1'
-                     }
-               stage 'Stage 2'
-               node {
-                     echo 'Hello World 2'
-                     }
-           
-                stage 'Starting NextDataP'
-           parallel(
-               "NexData_temp 1" : { 
-             
-              
-                
-                //    node{
-                       build job: 'NexData_temp'
-                 //   }
-               },
-              
-               "testpipeline2" : { 
-             
-              
-                           build job : 'testpipeline'
-                        
-               }
-              )
-              
-                
-
-                   
-
-
-               }
-
-
+         step(
+           [
+             $class: 'S3BucketPublisher',
+             entries: [
+               [
+                 $class: 'Entry',
+                 bucket: "jenkins-poc/${env.JOB_BASE_NAME}",
+                 sourceFile: "${env.JOB_BASE_NAME}.tar.gz",
+                 selectedRegion: "us-east-1"
+               ]]])
+        }
+         
 
