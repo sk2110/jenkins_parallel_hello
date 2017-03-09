@@ -61,7 +61,7 @@ import groovy.json.JsonSlurper
         )
         stage 'NextDataP'
         node { 
-               build job: 'NexData_temp'
+               build job: 'NexData'
               }
 
         stage "Upload artifact"
