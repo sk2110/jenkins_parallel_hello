@@ -74,10 +74,10 @@ import groovy.json.JsonSlurper
                  $class: 'Entry',
                   bucket: "jenkins-poc/NextData-${env.BUILD_NUMBER}",
                  sourceFile: "${env.JOB_BASE_NAME}.tar.gz",
-                // selectedRegion: "us-east-1"
+                 selectedRegion: "us-east-1"
                ]],
          profileName: 'jenkins-poc',
-              dontWaitForConcurrentBuildCompletion: false])}
+              dontWaitForConcurrentBuildCompletion: true])}
         
 
    /*   stage 'echos'
