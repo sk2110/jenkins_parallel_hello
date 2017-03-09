@@ -75,7 +75,9 @@ import groovy.json.JsonSlurper
                  bucket: "jenkins-poc/${env.JOB_BASE_NAME}",
                  sourceFile: "${env.JOB_BASE_NAME}.tar.gz",
                 // selectedRegion: "us-east-1"
-               ]]])
+               ]],
+         profileName: 'jenkins-poc',
+        dontWaitForConcurrentBuildCompletion: false])
         }*/
 
       stage 'echos'
@@ -83,7 +85,7 @@ import groovy.json.JsonSlurper
             echo env.JOB_BASE_NAME
             echo env.BUILD_NUMBER 
             echo env.BUILD_STATUS
-            echo env.s3-profile
+           // echo env.s3-profile
             
          }
          
