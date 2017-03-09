@@ -59,7 +59,7 @@ import groovy.json.JsonSlurper
               }
            }
         )
-      /*  stage 'NextDataP'
+        stage 'NextDataP'
         node { 
                build job: 'NextData'
               }
@@ -72,13 +72,13 @@ import groovy.json.JsonSlurper
              entries: [
                [
                  $class: 'Entry',
-                 bucket: "jenkins-poc/${env.JOB_BASE_NAME}",
+                  bucket: "jenkins-poc/NextData-${env.BUILD_NUMBER}",
                  sourceFile: "${env.JOB_BASE_NAME}.tar.gz",
                 // selectedRegion: "us-east-1"
                ]],
          profileName: 'jenkins-poc',
         dontWaitForConcurrentBuildCompletion: false])
-        }*/
+        
 
       stage 'echos'
          node {
