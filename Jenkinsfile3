@@ -83,6 +83,8 @@ import groovy.json.JsonSlurper
             echo env.JOB_BASE_NAME
             echo env.BUILD_NUMBER 
             echo env.BUILD_STATUS
+            echo env.s3-profile
+            
          }
          
 
