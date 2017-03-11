@@ -76,7 +76,7 @@ import groovy.json.JsonSlurper
                [
                  $class: 'Entry',
                   bucket: "jenkins-poc",
-                  sourceFile: "/mnt/jenkins/jobs/${env.JOB_BASE_NAME}/${env.BUILD_NUMBER}-1/*.xml",
+                  sourceFile: "dist/*",
                  selectedRegion: "us-east-1"
                ]]
               //,  profileName: 'jenkins-poc',
