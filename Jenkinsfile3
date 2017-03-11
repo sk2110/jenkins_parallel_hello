@@ -68,9 +68,9 @@ import groovy.json.JsonSlurper
         node {
          step(
            [
-            echo env.JOB_BASE_NAME
-            echo env.BUILD_NUMBER 
-            echo env.BUILD_STATUS
+             echo env.JOB_BASE_NAME
+             echo env.BUILD_NUMBER 
+             echo env.BUILD_STATUS
              $class: 'S3BucketPublisher',
              entries: [
                [
