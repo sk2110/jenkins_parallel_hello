@@ -66,11 +66,12 @@ import groovy.json.JsonSlurper
 */
         stage "Upload artifact"
         node {
-         step(
-           [
              echo env.JOB_BASE_NAME
              echo env.BUILD_NUMBER 
              echo env.BUILD_STATUS
+         step(
+           [
+
              $class: 'S3BucketPublisher',
              entries: [
                [
