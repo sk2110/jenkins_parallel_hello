@@ -59,20 +59,33 @@ import groovy.json.JsonSlurper
               }
            }
         )
-        /*stage 'NextDataP'
+       /* stage 'NextDataP'
         node { 
                build job: 'NextData'
-              }
+}{
+
 */
+
         stage "Upload artifact"
-        node {
+         "upload 1" : 
+            {
+               node
+               { 
+                  sh "aws s3 cp target/*.jar s3://jenkins-poc/${JOB_BASE_NAME}/"
+               }
+            }
+                  
+
+            
+
+     /*   node {
              echo env.JOB_BASE_NAME
              echo env.BUILD_NUMBER 
          step(
            [
 
              $class: 'S3BucketPublisher',
-             entries: [
+             entries: [e
                [
                  $class: 'Entry',
                   bucket: "jenkins-poc",
@@ -83,7 +96,7 @@ import groovy.json.JsonSlurper
              // dontWaitForConcurrentBuildCompletion: true
            ])}
         
-
+*/
    /*   stage 'echos'
          node {
             echo env.JOB_BASE_NAME
